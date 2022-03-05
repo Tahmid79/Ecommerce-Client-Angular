@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeMainComponent } from './home-main/home-main.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 
 @NgModule({
   declarations: [
-    HomeMainComponent
+    HomeMainComponent,
+    ProductCardComponent
   ],
   imports: [
     CommonModule,
