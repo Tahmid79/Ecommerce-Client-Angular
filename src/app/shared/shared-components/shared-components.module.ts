@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AntDesignModule } from "../ant-design/ant-design.module";
+import {RouterModule} from "@angular/router";
 
 const exports: any = [NavbarComponent] ;
 
@@ -11,7 +12,8 @@ const exports: any = [NavbarComponent] ;
   ],
   imports: [
     CommonModule,
-    AntDesignModule
+    AntDesignModule,
+    RouterModule
   ],
   exports: exports
 })
