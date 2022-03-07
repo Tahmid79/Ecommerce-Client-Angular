@@ -1,13 +1,13 @@
-<div style="width: 60%;" fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="0.2%" >
+<div class="container" fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="3%" >
 
   <ng-container *ngFor="let i of [1,2,3,4,5,6,7,8]">
 
-    <nz-card fxFlex="33%" nzTitle="Product1">
+    <nz-card class="product-item" nzHoverable fxFlex="30%" nzTitle="Product1">
 
       <div class="product-image" [style.background-image]="product_img" >
       </div>
 
-      <p>$10</p>
+      <h2>$10</h2>
 
       <div class="product-actions">
 
