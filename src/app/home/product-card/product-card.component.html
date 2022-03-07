@@ -2,7 +2,7 @@
 
   <ng-container *ngFor="let i of [1,2,3,4,5,6,7,8]">
 
-    <nz-card class="product-item" nzHoverable fxFlex="30%" nzTitle="Product1">
+    <nz-card class="product-item" fxFlex="30%" nzTitle="Product1">
 
       <div class="product-image" [style.background-image]="product_img" >
       </div>
@@ -10,6 +10,11 @@
       <h2>$10</h2>
 
       <div class="product-actions">
+
+        <button class="cart-button" nz-button nzType="primary" nzShape="round">
+          <i nz-icon nzType="shopping-cart" nzTheme="outline"></i>
+          Add to cart
+        </button>
 
       </div>
 
