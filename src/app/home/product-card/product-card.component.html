@@ -1,8 +1,24 @@
-<nz-card style="width:300px;" nzTitle="Card title" [nzExtra]="extraTemplate">
-  <p>Card content</p>
-  <p>Card content</p>
-  <p>Card content</p>
-</nz-card>
-<ng-template #extraTemplate>
-  <a>More</a>
-</ng-template>
+<div style="width: 60%;" fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="0.2%" >
+
+  <ng-container *ngFor="let i of [1,2,3,4,5,6,7,8]">
+
+    <nz-card fxFlex="33%" nzTitle="Product1">
+
+      <div class="product-image" [style.background-image]="product_img" >
+      </div>
+
+      <p>$10</p>
+
+      <div class="product-actions">
+
+      </div>
+
+    </nz-card>
+
+  </ng-container>
+
+
+</div>
+
+
+
