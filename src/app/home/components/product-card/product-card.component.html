@@ -13,6 +13,14 @@
     </nz-pagination>
   </div>
 
+  <div class="sort-order" >
+    <nz-select [(ngModel)]="sortOrder" (ngModelChange)="changeSortOrder($event)" >
+      <nz-option nzValue="default" nzLabel="Default"></nz-option>
+      <nz-option nzValue="ascending" nzLabel="Ascending"></nz-option>
+      <nz-option nzValue="descending" nzLabel="Descending"></nz-option>
+    </nz-select>
+  </div>
+
   <div class="container" fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="3%">
 
   <ng-container *ngFor="let product of productListPaginated">
@@ -22,7 +30,7 @@
       <div class="product-image" [style.background-image]="product_img" >
       </div>
 
-      <h2>{{product.price}}</h2>
+      <h2>${{product.price}}</h2>
 
       <div class="product-actions">
 

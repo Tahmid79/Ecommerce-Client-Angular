@@ -19,6 +19,8 @@ export class ProductCardComponent implements OnInit {
     total: 60
   } ;
 
+  sortOrder: string = 'default' ;
+
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
@@ -40,6 +42,10 @@ export class ProductCardComponent implements OnInit {
   paginationChange(currentPage:number){
      this.paginator.currentIndex = currentPage;
      this.productListPaginated = this.productListPaginated = this.paginate(this.productList, this.paginator.pageSize, this.paginator.currentIndex);
+  }
+
+  changeSortOrder(event: any){
+    console.log(event) ;
   }
 
 }

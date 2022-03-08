@@ -6,6 +6,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { SharedModule } from "../shared/shared.module";
 import {HomeMainComponent} from "./components/home-main/home-main.component";
 import {ProductCardComponent} from "./components/product-card/product-card.component";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -13,10 +14,11 @@ import {ProductCardComponent} from "./components/product-card/product-card.compo
     HomeMainComponent,
     ProductCardComponent
   ],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    SharedModule
-  ]
+    imports: [
+        CommonModule,
+        HomeRoutingModule,
+        SharedModule,
+        FormsModule
+    ]
 })
 export class HomeModule { }
