@@ -5,6 +5,10 @@ const routes: Routes = [
   {
       path : 'cart' , loadChildren:
       ()=> import('./shopping-cart/shopping-cart-routing.module').then(m => m.ShoppingCartRoutingModule)
+  },
+  {
+    path : 'details' , loadChildren:
+      ()=> import('./product-details/product-details-routing.module').then(m => m.ProductDetailsRoutingModule)
   }
 ];
 
