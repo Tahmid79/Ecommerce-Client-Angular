@@ -1,5 +1,6 @@
-<div *ngIf="productList.length === 0" >
-  <h1>Loading</h1>
+<div *ngIf="productList.length === 0" class="spinner-container" fxLayout="row" fxLayoutAlign="center center" >
+  <ng-template #indicatorTemplate><i class="spinner" nz-icon nzType="loading"></i></ng-template>
+  <nz-spin nzSimple [nzIndicator]="indicatorTemplate"></nz-spin>
 </div>
 
 
