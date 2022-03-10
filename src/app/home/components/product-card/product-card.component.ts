@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductService} from "../../../shared/services/product.service";
 import {IProduct} from "../../../shared/interfaces/product";
-import {first} from "rxjs/operators";
+import * as _ from "lodash";
 
 @Component({
   selector: 'app-product-card',
@@ -32,7 +32,7 @@ export class ProductCardComponent implements OnInit {
   getProductList(): void {
     this.productService.getProducts().subscribe( data => {
         this.productList = data ;
-        this.productListNoSort = data ;
+        this.productListNoSort = _.cloneDeep(data) ;
         this.paginator.total = data.length-1 ;
         this.setPagination() ;
     }) ;
