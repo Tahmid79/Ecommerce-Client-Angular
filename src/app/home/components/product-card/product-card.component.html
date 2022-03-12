@@ -23,30 +23,30 @@
 
   <div class="container" fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="3%">
 
-  <ng-container *ngFor="let product of productListPaginated">
+    <ng-container *ngFor="let product of productListPaginated">
 
-    <nz-card class="product-item" fxFlex="30%" nzTitle="{{product.title}}">
+      <div class="product-container" fxFlex="30%" fxLayout="column">
 
-      <div class="product-image" [style.background-image]="product_img" >
+        <nz-card class="product-item" nzTitle="{{product.title}}" >
+          <div class="product-image" [style.background-image]="product_img" >
+          </div>
+
+          <h2>${{product.price}}</h2>
+        </nz-card>
+
+        <div class="product-actions">
+          <button class="cart-button" nz-button nzType="primary" nzShape="round">
+            <i nz-icon nzType="shopping-cart" nzTheme="outline"></i>
+            Add to cart
+          </button>
+        </div>
+
       </div>
 
-      <h2>${{product.price}}</h2>
-
-      <div class="product-actions">
-
-        <button class="cart-button" nz-button nzType="primary" nzShape="round">
-          <i nz-icon nzType="shopping-cart" nzTheme="outline"></i>
-          Add to cart
-        </button>
-
-      </div>
-
-    </nz-card>
-
-  </ng-container>
+    </ng-container>
 
 
-</div>
+  </div>
 
 </ng-container>
 
