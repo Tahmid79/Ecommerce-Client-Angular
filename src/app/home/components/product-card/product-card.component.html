@@ -1,34 +1,52 @@
-<div *ngIf="productList.length === 0" >
-  <h1>Loading</h1>
+<div *ngIf="productList.length === 0" class="spinner-container" fxLayout="row" fxLayoutAlign="center center" >
+  <ng-template #indicatorTemplate><i class="spinner" nz-icon nzType="loading"></i></ng-template>
+  <nz-spin nzSimple [nzIndicator]="indicatorTemplate"></nz-spin>
 </div>
 
+<ng-container *ngIf="productList.length > 0" >
 
-<div class="container" fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="3%" *ngIf="productList.length > 0" >
+  <div class="pagination-container" >
+    <nz-pagination [nzPageIndex]="paginator.currentIndex"
+                   [nzTotal]="paginator.total"
+                   [nzPageSize]="paginator.pageSize"
+                   (nzPageIndexChange)="paginationChange($event)" >
+    </nz-pagination>
+  </div>
 
-  <ng-container *ngFor="let product of productList">
+  <div class="sort-order" >
+    <nz-select [(ngModel)]="sortOrder" (ngModelChange)="changeSortOrder($event)" >
+      <nz-option nzValue="default" nzLabel="Default"></nz-option>
+      <nz-option nzValue="ascending" nzLabel="Ascending"></nz-option>
+      <nz-option nzValue="descending" nzLabel="Descending"></nz-option>
+    </nz-select>
+  </div>
 
-    <nz-card class="product-item" fxFlex="30%" nzTitle="{{product.title}}">
+  <div class="container" fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="3%">
 
-      <div class="product-image" [style.background-image]="product_img" >
+    <ng-container *ngFor="let product of productListPaginated">
+
+      <div class="product-container" fxFlex="30%" fxLayout="column">
+
+        <nz-card class="product-item" nzTitle="{{product.title}}" (click)="showDetails(product)" >
+          <div class="product-image" [style.background-image]="product_img" >
+          </div>
+
+          <h2>${{product.price}}</h2>
+        </nz-card>
+
+        <div class="product-actions">
+          <button class="cart-button" nz-button nzType="primary" nzShape="round">
+            <i nz-icon nzType="shopping-cart" nzTheme="outline"></i>
+            Add to cart
+          </button>
+        </div>
+
       </div>
 
-      <h2>{{product.price}}</h2>
-
-      <div class="product-actions">
-
-        <button class="cart-button" nz-button nzType="primary" nzShape="round">
-          <i nz-icon nzType="shopping-cart" nzTheme="outline"></i>
-          Add to cart
-        </button>
-
-      </div>
-
-    </nz-card>
-
-  </ng-container>
+    </ng-container>
 
 
-</div>
+  </div>
 
-
+</ng-container>
 
