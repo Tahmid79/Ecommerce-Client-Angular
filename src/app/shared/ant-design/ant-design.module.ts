@@ -6,8 +6,9 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { NzSelectModule } from 'ng-zorro-antd/select';
 
-const exports: any = [NzMenuModule,NzIconModule,NzCardModule,NzGridModule,NzSpinModule,NzPaginationModule];
+const exports: any = [NzMenuModule,NzIconModule,NzCardModule,NzGridModule,NzSpinModule,NzPaginationModule,NzSelectModule];
 
 @NgModule({
   declarations: [],
