@@ -27,7 +27,7 @@
 
       <div class="product-container" fxFlex="30%" fxLayout="column">
 
-        <nz-card class="product-item" nzTitle="{{product.title}}" >
+        <nz-card class="product-item" nzTitle="{{product.title}}" (click)="showDetails(product)" >
           <div class="product-image" [style.background-image]="product_img" >
           </div>
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ProductService} from "../../../shared/services/product.service";
 import {IProduct} from "../../../shared/interfaces/product";
 import * as _ from "lodash";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-product-card',
@@ -23,7 +24,10 @@ export class ProductCardComponent implements OnInit {
 
   sortOrder: string = 'default' ;
 
-  constructor(private productService: ProductService) { }
+  constructor(
+    private productService: ProductService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.getProductList() ;
@@ -36,6 +40,10 @@ export class ProductCardComponent implements OnInit {
         this.paginator.total = data.length-1 ;
         this.setPagination() ;
     }) ;
+  }
+
+  showDetails(product: IProduct){
+    this.router.navigate(['details', product._id]) ;
   }
 
   paginate = (array: any, page_size:number, page_number:number) => {
